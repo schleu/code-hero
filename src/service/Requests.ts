@@ -1,13 +1,13 @@
 import { iCharacter } from "../types";
-import { ApiRoutes } from "./ApiRoutes";
+import { ApiRoutes } from "../constants/ApiRoutes";
 import { Axios } from "./api";
 
-interface iResponse<T> {
+export interface iResponse<T> {
   count: number;
   limit: number;
   offset: number;
   total: number;
-  results: T[];
+  results: T;
 }
 
 export interface ParamsRequest {
@@ -26,13 +26,36 @@ export interface ParamsRequest {
 export const getCharacters = async ({
   limit = 10,
   ...params
-}: ParamsRequest): Promise<iResponse<iCharacter>> => {
+}: ParamsRequest): Promise<iResponse<iCharacter[]>> => {
   const response = await Axios.get(ApiRoutes.CHARACTERS, {
     params: {
       limit,
       ...params,
     },
   });
+
+  return response.data.data;
+};
+
+interface getCharacterProps {
+  characterId: string;
+  params: ParamsRequest;
+}
+
+export const getCharacter = async ({
+  characterId,
+  params,
+}: getCharacterProps): Promise<iResponse<iCharacter>> => {
+  const { limit = 10, ...restOfparams } = params;
+  const response = await Axios.get(
+    ApiRoutes.CHARACTER_BY_ID.replace(":id", characterId),
+    {
+      params: {
+        limit,
+        ...restOfparams,
+      },
+    }
+  );
 
   return response.data.data;
 };

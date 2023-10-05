@@ -1,0 +1,36 @@
+.textField{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 500px;
+    width: 100%;
+    padding: 2rem 1rem;
+  
+    
+    label{
+      font-weight: bold;
+    }
+    .textFieldContent{
+      width: 100%;
+      position: relative;
+    }
+  
+    input{
+      all: unset;
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: #FFF;
+    }
+    
+    img{
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      top: 50%;
+      right: 0.5rem;
+      transform: translate(0,-50%);
+    }
+  
+  }
