@@ -1,52 +1,39 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans Caption', sans-serif;
+    a { all: unset }
+
+    h3{
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    p{
+      font-size: 1rem;
+    }
+}
+
 #root {
-  max-width: 1280px;
+  background-color: #e3e3e3;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  font-family: 'Marvel', 'PT Sans Caption', sans-serif;
-  h3{
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  p{
-    font-size: 1rem;
-  }
+  display: flex;
+  justify-content: center;
+  padding: 70px 0;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .container{
   display: flex;
   flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1280px;
 }
 
-.cardContainer{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  
-}
 
-.card{
-  width: 200px;
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-  align-items: center;
-  border: solid 1px #0003;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 8px #000000;
-
-  .title{
-    font-weight: 700;
-  }
-
-  img{
-    width: 150px;
-    height: 150px;
-    border-radius: 1rem;
-  }
-  
-}
 
 .textField{
   display: flex;
@@ -61,10 +48,33 @@
     font-weight: bold;
   }
 
+  input{
+    all: unset;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #FFF;
+  }
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #41B19B;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

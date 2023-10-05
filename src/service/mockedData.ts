@@ -1761,7 +1761,10 @@ export const mokedData = {
         },
       ],
     },
-    {
+  ],
+};
+
+/* {
       id: 1010903,
       name: "Abyss (Age of Apocalypse)",
       description: "",
@@ -1908,8 +1911,7 @@ export const mokedData = {
           url: "http://marvel.com/comics/characters/1011266/adam_destine?utm_campaign=apiRef&utm_source=df7c833744a7e6817bef0839e8a8351a",
         },
       ],
-    },
-    {
+    },{
       id: 1010354,
       name: "Adam Warlock",
       description:
@@ -4078,6 +4080,4 @@ export const mokedData = {
           url: "http://marvel.com/comics/characters/1011136/air-walker_gabriel_lan?utm_campaign=apiRef&utm_source=df7c833744a7e6817bef0839e8a8351a",
         },
       ],
-    },
-  ],
-};
+    }, */
