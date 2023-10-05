@@ -1,44 +1,45 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import "./App.scss";
-// import { getCharacters } from "./service/Requests";
-// import { ParamsRequest } from "./service/Requests";
-import { Pagination } from "./components/Pagination";
-import { mokedData } from "./service/mockedData";
-import { iCharacter } from "./types";
 import { Cards } from "./components/Cards";
-import { TextField } from "./components/TextField";
 import { Header } from "./components/Header";
+import { Pagination } from "./components/Pagination";
+import { TextField } from "./components/TextField";
+import { ParamsRequest, getCharacters } from "./service/Requests";
+import { iCharacter } from "./types";
 
 // import { ReactComponent as SearchIcon } from "../src/assets/search.svg";
 
 function App() {
   const [characters, setCharacters] = useState<iCharacter[]>([]);
-
-  const [totalPage, setTotalPages] = useState(0);
   const [actualPage, setActualPage] = useState(1);
-  const itensPerPage = 10;
-
   const [search, setSearch] = useState("");
+  const [totalOfPages, setTotalOfPages] = useState(1);
+
+  const itensPerPage = 10;
+  const offset = itensPerPage * (actualPage - 1);
 
   useEffect(() => {
     const getData = async () => {
-      // const params: ParamsRequest = {
-      //   nameStartsWith: search,
-      // };
-      // const characters = await getCharacters(params);
-      // console.log(characters);
-      // setCharacters(characters.results || []);
+      const params: ParamsRequest = {
+        limit: itensPerPage,
+        offset,
+      };
+      if (search) params.nameStartsWith = search;
+      const characters = await getCharacters(params);
+      const totalOfPages = Math.ceil(characters.total / itensPerPage);
+
+      setTotalOfPages(totalOfPages);
+      setCharacters(characters.results);
     };
+
     getData();
+  }, [offset, search]);
 
-    const totalPage = Math.ceil(mokedData.total / itensPerPage);
-
-    setTotalPages(totalPage);
-    setCharacters(mokedData.results);
-  }, [actualPage, search]);
-
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) =>
-    setSearch(e.target.value);
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    const search = e.target.value;
+    setActualPage(1);
+    setSearch(search);
+  };
 
   return (
     <div className="container">
@@ -49,13 +50,14 @@ function App() {
         label={`Nome do personagem`}
         onChange={handleSearch}
         defaultValue={search}
+        placeholder="Search"
       />
 
       <div>
         <Cards characters={characters} />
         <Pagination
           actual={actualPage}
-          total={totalPage}
+          total={totalOfPages}
           getActualPage={setActualPage}
         />
       </div>

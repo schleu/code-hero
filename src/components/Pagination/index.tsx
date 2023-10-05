@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.scss";
 // import { ReactComponent as ChevronLeft } from "../../assets/ChevronLeft.svg";
 
@@ -6,10 +6,12 @@ interface Props {
   total: number;
   actual: number;
   getActualPage: (e: number) => void;
+  isLoading?: boolean;
 }
 
 export const Pagination = ({ actual, total, getActualPage }: Props) => {
-  const [actualPage, setActualPage] = useState(actual);
+  const [actualPage, setActualPage] = useState(1);
+  useEffect(() => setActualPage(actual), [actual]);
 
   const especificPage = (page: number) => {
     const actualPage = page < 2 ? 1 : page >= total ? total : page;
