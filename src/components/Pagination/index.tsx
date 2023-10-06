@@ -1,7 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import "./styles.scss";
-import ChevronLeft from "../../assets/ChevronLeft.svg";
-import ChevronRight from "../../assets/ChevronRight.svg";
+import { ChevronLeft, ChevronRight } from "../../assets";
 
 interface Props {
   total: number;
@@ -29,24 +28,22 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
       {actualPage > 1 && (
         <>
           <Item
-            page={<img src={ChevronLeft} />}
+            page={ChevronLeft()}
             callback={() => especificPage(previousPage)}
           />
           <Item page={1} callback={() => especificPage(1)} />
+        </>
+      )}
 
-          {actualPage === 3 && (
-            <Item page={2} callback={() => especificPage(2)} />
-          )}
+      {actualPage === 3 && <Item page={2} callback={() => especificPage(2)} />}
 
-          {actualPage > 3 && (
-            <>
-              <Item page={"..."} />
-              <Item
-                page={actualPage - 1}
-                callback={() => especificPage(previousPage)}
-              />
-            </>
-          )}
+      {actualPage > 3 && (
+        <>
+          <Item page={"..."} />
+          <Item
+            page={actualPage - 1}
+            callback={() => especificPage(previousPage)}
+          />
         </>
       )}
 
@@ -57,26 +54,22 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
       />
 
       {actualPage < total && (
-        <>
-          <Item
-            page={actualPage + 1}
-            callback={() => especificPage(nextPage)}
-          />
-          {actualPage === total - 2 && (
-            <Item page={total} callback={() => especificPage(total)} />
-          )}
-          {actualPage <= total - 3 && (
-            <>
-              <Item page={"..."} />
-              <Item page={total} callback={() => especificPage(total)} />
-            </>
-          )}
+        <Item page={actualPage + 1} callback={() => especificPage(nextPage)} />
+      )}
 
-          <Item
-            page={<img src={ChevronRight} />}
-            callback={() => especificPage(nextPage)}
-          />
+      {actualPage === total - 2 && (
+        <Item page={total} callback={() => especificPage(total)} />
+      )}
+
+      {actualPage <= total - 3 && (
+        <>
+          <Item page={"..."} />
+          <Item page={total} callback={() => especificPage(total)} />
         </>
+      )}
+
+      {actualPage < total && (
+        <Item page={ChevronRight()} callback={() => especificPage(nextPage)} />
       )}
     </div>
   );
@@ -86,11 +79,19 @@ interface ItemProps {
   page: ReactNode;
   callback?: () => void;
   isSelected?: boolean;
+  className?: string;
 }
 
-const Item = ({ page, callback = () => {}, isSelected = false }: ItemProps) => (
+const Item = ({
+  page,
+  callback = () => {},
+  isSelected = false,
+  className = "",
+}: ItemProps) => (
   <div
-    className={`paginationItem ${isSelected ? "paginationItemSelected" : ""}`}
+    className={`paginationItem ${
+      isSelected ? "paginationItemSelected" : ""
+    } ${className}`}
     onClick={callback}
   >
     {page}

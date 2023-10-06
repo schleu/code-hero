@@ -1,14 +1,14 @@
 import { HTMLAttributes } from "react";
+import { Search } from "../../../../assets";
 import "./style.scss";
 
 interface Props extends HTMLAttributes<HTMLInputElement> {
   label: string;
-  iconSrc?: string;
 }
 
-export const TextField = ({ label, iconSrc, ...props }: Props) => {
+export const SearchField = ({ label, ...props }: Props) => {
   return (
-    <div className="textField">
+    <div className="searchField">
       <label htmlFor="search">{label}</label>
       <div className="textFieldContent">
         <input
@@ -16,7 +16,7 @@ export const TextField = ({ label, iconSrc, ...props }: Props) => {
           id="search"
           {...props}
         />
-        {iconSrc && <img src={iconSrc} />}
+        <Search />
       </div>
     </div>
   );

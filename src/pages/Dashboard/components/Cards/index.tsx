@@ -1,4 +1,4 @@
-import { iCharacter } from "../../types";
+import { iCharacter } from "../../../../types";
 import "./styles.scss";
 
 interface Props {
@@ -8,15 +8,24 @@ interface Props {
 export const Cards = ({ characters }: Props) => {
   return (
     <div className="cardContainer">
-      {characters.map((character) => {
+      {characters.map((character, i) => {
         const imgSrc =
           character.thumbnail.path + "." + character.thumbnail.extension;
         return (
           <a href={`/${character.id}`} key={character.id}>
             <div className="card">
               <img src={imgSrc} alt="" />
-              <p className="title">{character.name}</p>
-              <p className="description">{character.description}</p>
+              <div className="infos">
+                <p className="title">{character.name + (i + 1)}</p>
+
+                <p
+                  className={`description ${
+                    character.description ? "" : "notFound"
+                  }`}
+                >
+                  {character.description || "Nenhuma descrição"}
+                </p>
+              </div>
             </div>
           </a>
         );

@@ -1,0 +1,58 @@
+@import '../../../../scss/default.scss';
+
+.cardContainer{
+  width: 100%;
+  height: 600px;
+  gap: 2rem;
+  overflow-x: scroll;
+  display: flex;
+  
+  .card{
+    width: 300px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: $radii-8;
+    background: $color-100;
+    transition: all 0.7s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: $shadow-xl;
+    
+    &:hover {
+      background-color: $color-200;
+    }
+    
+    img{
+      width: 100%;
+      height: 18.75rem;
+    }
+  
+    .infos{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 1rem;
+      
+      .title{
+        height: 55px;
+        font-size: $font-lg;
+        font-weight: $font-bold;
+        color: $color-800;
+      }
+    
+      .description{
+        height: 160px;
+        overflow-y: scroll;
+        color: $color-700;
+      }
+      .notFound{
+        color: $color-600;
+      }
+    }
+  
+    
+  }
+
+}

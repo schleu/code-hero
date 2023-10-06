@@ -1,3 +1,4 @@
+@import './scss/default.scss';
 
 *{
     margin: 0;
@@ -5,43 +6,30 @@
     box-sizing: border-box;
     font-family: 'PT Sans Caption', sans-serif;
     a { all: unset }
-
+    p{ font-size: $font-md; }
     h3{
-      font-size: 2rem;
-      font-weight: 700;
-    }
-    p{
-      font-size: 1rem;
+      font-size: $font-lg;
+      font-weight: $font-bold;
     }
 }
 
 #root {
-  background-color: #e3e3e3;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  padding: 70px 0;
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
-/* width */
+
 ::-webkit-scrollbar {
   width: 2px;
+  height: 10px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #41B19B;
-  border-radius: 2px;
+  background: linear-gradient(90deg,$color-error 0%,$color-100 55%,$color-error 100%);
+  border-radius: $radii-16;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}

@@ -1,8 +1,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import SearchIcon from "../../assets/search.svg";
-import { Cards } from "../../components/Cards";
+import { Cards } from "./components/Cards";
 import { Pagination } from "../../components/Pagination";
-import { TextField } from "../../components/TextField";
+
 import {
   ParamsRequest,
   getCharacters,
@@ -12,6 +11,7 @@ import { iCharacter } from "../../types";
 
 import { useDebounce } from "../../hooks/useDebounce";
 import "./styles.scss";
+import { SearchField } from "./components/SearchField";
 
 export const DashboardPage = () => {
   const [characters, setCharacters] = useState<iCharacter[]>([]);
@@ -50,18 +50,17 @@ export const DashboardPage = () => {
   };
 
   return (
-    <>
+    <div className="dashboardPage">
       <div className="titlePage">Busca de personagens</div>
 
-      <TextField
-        label={`Nome do personagem ${searchDebouced}`}
+      <SearchField
+        label={"Nome do personagem"}
         onChange={handleSearch}
         defaultValue={search}
         placeholder="Search"
-        iconSrc={SearchIcon}
       />
 
-      <div>
+      <div className="">
         <Cards characters={characters} />
         <Pagination
           actual={actualPage}
@@ -69,6 +68,6 @@ export const DashboardPage = () => {
           getActualPage={setActualPage}
         />
       </div>
-    </>
+    </div>
   );
 };
