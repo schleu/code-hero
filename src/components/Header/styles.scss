@@ -5,6 +5,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9;
     box-shadow: 0px -10px 20px #000000;
 }
 
@@ -16,5 +17,29 @@
     padding: 0 1rem;
     background-color: #FFFFFF;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        width: 150px;
+    }
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    p{
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .initials{
+        font-size: 1.5rem;
+        font-weight: 700;
+        border-radius: 0.25rem;
+        // border: solid 1px #000;
+        padding: 0.25rem;
+        box-shadow: 1px 2px 3px #000;
+    }
 }

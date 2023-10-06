@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getCharacter } from "../../service/Requests";
 import { iCharacter } from "../../types";
 import "./styles.scss";
@@ -17,9 +17,10 @@ export const HeroDetailPage = () => {
       items: [{ resourceURI: "", name: "" }],
     },
   } as iCharacter);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
@@ -41,17 +42,21 @@ export const HeroDetailPage = () => {
   return isLoading ? (
     <></>
   ) : (
-    <div className="container">
-      <img src={srcImage} alt="" />
+    <div className="containerHeroDetail">
+      <button className="backButton" onClick={() => navigate(-1)}>
+        Voltar
+      </button>
       <div className="content">
-        <h3>{character.name}</h3>
-        <p>{character.description}</p>
+        <img src={srcImage} alt="" />
+        <div className="infos">
+          <h3>{character.name}</h3>
+          <p>{character.description}</p>
 
-        <div className="boards">
-          <Board title="Comics" items={character.comics.items} />
-          <Board title="Eventos" items={character.events.items} />
-          <Board title="Histórias" items={character.stories.items} />
-          <Board title="Histórias" items={character.stories.items} />
+          <div className="boards">
+            <Board title="Comics" items={character.comics.items} />
+            <Board title="Eventos" items={character.events.items} />
+            <Board title="Histórias" items={character.stories.items} />
+          </div>
         </div>
       </div>
     </div>
@@ -64,15 +69,15 @@ interface Props {
 }
 const Board = ({ items, title }: Props) => {
   return (
-    items.length && (
-      <div className="table">
-        <p className="title">{title}</p>
-        <div className="items">
-          {items.map((item) => (
-            <p className="item">{item.name}</p>
-          ))}
-        </div>
+    <div className="table">
+      <p className="title">{title}</p>
+      <div className="items">
+        {items.length ? (
+          items.map((item) => <p className="item">{item.name}</p>)
+        ) : (
+          <p className="item not_found">Nenhum item encontrado.</p>
+        )}
       </div>
-    )
+    </div>
   );
 };
