@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { SadFaceIcon } from "../../../../assets";
 import { iCharacter } from "../../../../types";
 import "./styles.scss";
 
@@ -6,30 +8,43 @@ interface Props {
 }
 
 export const Cards = ({ characters }: Props) => {
-  return (
-    <div className="cardContainer">
-      {characters.map((character, i) => {
-        const imgSrc =
-          character.thumbnail.path + "." + character.thumbnail.extension;
-        return (
-          <a href={`/${character.id}`} key={character.id}>
-            <div className="card">
-              <img src={imgSrc} alt="" />
-              <div className="infos">
-                <p className="title">{character.name + (i + 1)}</p>
+  const ref = useRef<HTMLDivElement>(null);
 
-                <p
-                  className={`description ${
-                    character.description ? "" : "notFound"
-                  }`}
-                >
-                  {character.description || "Nenhuma descrição"}
-                </p>
+  useEffect(() => {
+    ref.current?.scrollTo({ left: 0 });
+  }, [characters]);
+
+  return (
+    <div className="cardContainer" ref={ref}>
+      {characters.length ? (
+        characters.map((character, i) => {
+          const imgSrc =
+            character.thumbnail.path + "." + character.thumbnail.extension;
+          return (
+            <a href={`/${character.id}`} key={character.id}>
+              <div className="card">
+                <img src={imgSrc} alt="" />
+                <div className="infos">
+                  <p className="title">{character.name + (i + 1)}</p>
+
+                  <p
+                    className={`description ${
+                      character.description ? "" : "notFound"
+                    }`}
+                  >
+                    {character.description || "Nenhuma descrição encontrada"}
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
-        );
-      })}
+            </a>
+          );
+        })
+      ) : (
+        <div className="notFound">
+          {SadFaceIcon()}
+          Nenhum personagem encontrado
+        </div>
+      )}
     </div>
   );
 };

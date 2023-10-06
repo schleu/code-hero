@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 import { Search } from "../../../../assets";
-import "./style.scss";
+import "./styles.scss";
 
 interface Props extends HTMLAttributes<HTMLInputElement> {
   label: string;

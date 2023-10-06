@@ -1,0 +1,45 @@
+@import '../../../../scss/default.scss';
+
+.searchField{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%; 
+    
+    @media (min-width: $screen-md) { 
+      max-width: 500px;
+  }
+    
+    label{
+      font-weight: $font-bold;
+      color: $color-primary;
+    }
+
+    .textFieldContent{
+      width: 100%;
+      position: relative;
+      border-bottom: solid 1px $color-primary;
+
+      input{
+        all: unset;
+        width: 100%;
+        padding: $pad-md;
+        border-radius: $radii-4;
+        background-color: transparent;
+        color: $color-secondary;
+      }
+      
+      svg{
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translate(0,-50%);
+        color: $color-secondary;
+      }
+    }
+  
+  
+  }

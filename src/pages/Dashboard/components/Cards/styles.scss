@@ -2,14 +2,33 @@
 
 .cardContainer{
   width: 100%;
-  height: 600px;
   gap: 2rem;
   overflow-x: scroll;
   display: flex;
-  
+  padding: 1rem 0;
+
+  @media (min-width: $screen-md) { 
+    height: 600px;
+  }
+ 
+  .notFound{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: $font-xl;
+    color:$color-secondary;
+
+    svg{
+      width: 6rem;
+      height: 6rem;
+    }
+
+  }
+
   .card{
-    width: 300px;
-    min-height: 400px;
+    width: 300px;    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +37,7 @@
     transition: all 0.7s ease-in-out;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: $shadow-xl;
+    box-shadow: 5px 15px 10px #0004;
     
     &:hover {
       background-color: $color-200;
@@ -30,8 +49,10 @@
     }
   
     .infos{
+      width: 100%;
       display: flex;
       flex-direction: column;
+      align-items: start;
       gap: 1rem;
       padding: 1rem 1rem;
       
@@ -39,20 +60,29 @@
         height: 55px;
         font-size: $font-lg;
         font-weight: $font-bold;
-        color: $color-800;
+        color: $color-850;
       }
     
       .description{
-        height: 160px;
+        height: 150px;
+        padding: 0 0.5rem;
         overflow-y: scroll;
         color: $color-700;
+        display: none;
+        font-size: $font-md;
+
+        @media (min-width: $screen-md) { 
+          display: block;
+        }
       }
       .notFound{
+        font-size: $font-md;
         color: $color-600;
       }
     }
   
     
   }
+ 
 
 }

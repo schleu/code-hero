@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "../Header";
 import "./styles.scss";
+import { LinkedinIcon } from "../../assets";
 
 export const MasterLayout = () => {
   return (
@@ -8,6 +9,13 @@ export const MasterLayout = () => {
       <Header />
       <div className="contentMasterLayout">
         <Outlet />
+      </div>
+      <div className="footer">
+        <div className="footerContent">
+          <a href="https://www.linkedin.com/in/danilo-schleu" target="_blank">
+            <span>{LinkedinIcon}</span> Danilo Schleu
+          </a>
+        </div>
       </div>
     </div>
   );

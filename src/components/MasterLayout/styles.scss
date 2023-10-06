@@ -7,9 +7,24 @@
     gap: 3rem;
     width: 100%;
     min-height: 100vh;
-    color: $color-200;
-    background: url('background.png');
-    background-color: $color-600;
+    background-color: $color-200;
+    &::before{
+        content: '';
+        position: absolute;
+        opacity: 0.05;
+        z-index: 0;
+        width: 100%;
+        height: 100vh;
+        background: url('background.png');
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        background: radial-gradient(circle, $color-100 0%, transparent 100%);
+    }
     
     
     .contentMasterLayout{
@@ -17,19 +32,41 @@
         height: 100%;
         max-width: $screen-sm;
         padding: $pad-md 0;
-        margin-top: 70px;
+        margin-top: 6rem;      
+        z-index: 2;
 
         @media (min-width: $screen-sm) { 
             max-width: $screen-md;
             padding: $pad-xl;
+            margin-top: 8rem;
         }
         @media (min-width: $screen-md) { 
             max-width: $screen-lg;
+            
         }
         @media (min-width: $screen-lg) { 
             max-width: $screen-xl;
         }
 
+    }
+
+    .footer{
+        width: 100%;
+        height: 70px;
+        background-color: $color-primary;
+        color: $color-100;
+        z-index: 2;
+        .footerContent{
+            width: 100%;
+            height: 100%;
+            padding: 0 1rem;
+            max-width: $screen-xl;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1rem;
+        }
     }
 }
   

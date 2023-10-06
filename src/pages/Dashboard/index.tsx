@@ -10,8 +10,8 @@ import {
 import { iCharacter } from "../../types";
 
 import { useDebounce } from "../../hooks/useDebounce";
-import "./styles.scss";
 import { SearchField } from "./components/SearchField";
+import "./styles.scss";
 
 export const DashboardPage = () => {
   const [characters, setCharacters] = useState<iCharacter[]>([]);
@@ -51,13 +51,13 @@ export const DashboardPage = () => {
 
   return (
     <div className="dashboardPage">
-      <div className="titlePage">Busca de personagens</div>
+      <div className="titlePage">Descubra esse universo incrível!</div>
 
       <SearchField
-        label={"Nome do personagem"}
+        label="Qual personagem deseja encontrar?"
         onChange={handleSearch}
         defaultValue={search}
-        placeholder="Search"
+        placeholder="Digite aqui o nome de seu personagem"
       />
 
       <div className="">

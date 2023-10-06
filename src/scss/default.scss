@@ -1,29 +1,31 @@
-
 $screen-sm: 425px;
 $screen-md: 768px;
 $screen-lg: 1280px;
 $screen-xl: 1440px;
 
 
-$color-100: #F1F1F1;
-$color-200: #E1E1E1;
 $color-300: #AFAFAF;
 $color-400: #808080;
 $color-500: #545454;
 $color-600: #474747;
 $color-700: #2B2B2B;
-$color-800: #202020;
+$color-850: #202020;
 $color-900: #00000033;
-$color-error: #EC1D24;
+$color-error: #DD2A2A;
+$color-800: #040347; 
 
+$color-primary:#040347;
+$color-secondary:#DD2A2A;
+$color-100: #F1F1F1;
+$color-101: #F1F1F177;
+$color-200: #E1E1E1;
+
+$transition: all 0.2s ease-in-out;
 
 $radii-4: 0.25rem;//4px
 $radii-8: 0.5rem;//8px
 $radii-16: 1rem;//16px
 $radii-full: 50%;
-
-$icon-size: 1rem;
-
 
 $font-sm: 0.75rem;//12px
 $font-md: 1rem;//16px
@@ -31,17 +33,18 @@ $font-lg: 1.25rem;//20px
 $font-xl: 1.5rem;//24px
 $font-2xl: 2rem;//32px
 
-
 $font-bold: 700;
 $font-normal: 400;
 
-$shadow-sm: 0px -10px 20px #000;
-$shadow-md: 0px -05px 20px #000;
-$shadow-lg: 0px 00px 20px #000;
-$shadow-xl: 0px 10px 10px #000;
 
 $pad-sm: 0.25rem 0.5rem; // 4px 8px
 $pad-md: 0.5rem 0.75rem; // 8px 12px
 $pad-lg: 0.75rem 1rem; // 12px 16px
 $pad-xl: 1rem 1.25rem; // 16px 20px
 $pad-2xl: 1.5rem; // 24px 
+
+
+$shadow-sm: 0px -10px 20px #000;
+$shadow-md: 0px -05px 20px #000;
+$shadow-lg: 0px 00px 20px #000;
+$shadow-xl: 0px 10px 10px #000;

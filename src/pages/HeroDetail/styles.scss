@@ -1,20 +1,35 @@
+@import '../../scss/default.scss';
+
 .containerHeroDetail{
-    max-width: 900px;
-    padding: 2rem 1rem;
+    width: 100%;
+    padding: $pad-xl;
+    
 
     .backButton{
         all: unset;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-radius: $radii-4;
+        padding: $pad-md;
+        color: $color-secondary;
+        font-weight: $font-bold;
         cursor: pointer;
+
+        &:hover{
+            color: $color-primary;
+        }
+        
     }
 
     .content{
         width: 100%;
         margin-top: 1rem;
-        background-color: #FFF;
+        background-color: $color-100;
         display: flex;
         overflow: hidden;
-        box-shadow: 0px 0px 10px #000;
-        border-radius:  0.5rem;
+        box-shadow: 0 0 10px #0006;
+        border-radius:  $radii-16;
 
         @media (max-width: 600px) {
             flex-direction: column;
@@ -24,41 +39,73 @@
                 width: 100%!important;
             }   
         }
+
+        h3{
+            color: $color-800;
+        }
     
         img{
-            width: 300px;
+            width: 500px;
         }
 
         .infos{
+            width: 100%;
             display: flex;
             flex-direction: column;
-            padding: 1rem 1rem 2rem;
+            gap: 1rem;
+            padding: $pad-2xl;
             
+            .description{
+                height: 100%;
+                min-height: 100px;
+                max-height: 300px;
+                color: $color-primary;
+            }
+
+            .boards{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                .table{
+
+                    width: 100%;
+                    .title{
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-weight: $font-bold;
+                        color: $color-primary;
+                        font-size: $font-lg;
+
+                        
+                    }
+                    .items{
+                        width: 100%;
+                        max-height: 100px;
+                        overflow-y: auto;
+                        .item{
+                            width: 100%;
+                            color: $color-primary;
+                            padding: $pad-sm;
+                            transition: $transition;
+                            cursor: default;
+                            &:hover{
+                                color: $color-secondary;
+                                background-color: $color-200;
+        
+                            }
+                        }
+                        .not_found{
+                            color: $color-500;
+                        }
+                    }
+                }
+            }
         }
     
       
     
-        .table{
-            .title{
-                font-weight: 700;
-                padding: 0.5rem 0.5rem;
-            }
-            .items{
-                max-height: 100px;
-                
-                overflow-y: auto;
-                .item{
-                    padding: 0.2rem 1.5rem;
-                    transition: all 0.2s ease-in-out;
-                    cursor: default;
-                    &:hover{
-                        background-color: #0003;
-                    }
-                }
-                .not_found{
-                    color: #0006;
-                }
-            }
-        }
     }
 }

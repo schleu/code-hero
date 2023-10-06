@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getCharacter } from "../../service/Requests";
 import { iCharacter } from "../../types";
 import "./styles.scss";
+import { BookIcon, CalendarIcon, ChevronLeft, Star } from "../../assets";
 
 export const HeroDetailPage = () => {
   const [character, setCharacter] = useState<iCharacter>({
@@ -44,18 +45,33 @@ export const HeroDetailPage = () => {
   ) : (
     <div className="containerHeroDetail">
       <button className="backButton" onClick={() => navigate(-1)}>
+        {ChevronLeft()}
         Voltar
       </button>
       <div className="content">
         <img src={srcImage} alt="" />
         <div className="infos">
           <h3>{character.name}</h3>
-          <p>{character.description}</p>
+          <p className="description">
+            {character.description || "Sem descrição"}
+          </p>
 
           <div className="boards">
-            <Board title="Comics" items={character.comics.items} />
-            <Board title="Eventos" items={character.events.items} />
-            <Board title="Histórias" items={character.stories.items} />
+            <Board
+              title="Comics"
+              items={character.comics.items}
+              titleIcon={BookIcon()}
+            />
+            <Board
+              title="Eventos"
+              items={character.events.items}
+              titleIcon={CalendarIcon()}
+            />
+            <Board
+              title="Histórias"
+              items={character.stories.items}
+              titleIcon={Star()}
+            />
           </div>
         </div>
       </div>
@@ -66,11 +82,15 @@ export const HeroDetailPage = () => {
 interface Props {
   items: { name: string }[];
   title: string;
+  titleIcon: ReactNode;
 }
-const Board = ({ items, title }: Props) => {
+const Board = ({ items, title, titleIcon }: Props) => {
   return (
     <div className="table">
-      <p className="title">{title}</p>
+      <p className="title">
+        <span>{titleIcon}</span>
+        {title}
+      </p>
       <div className="items">
         {items.length ? (
           items.map((item) => <p className="item">{item.name}</p>)
