@@ -45,7 +45,7 @@ interface getCharacterProps {
 export const getCharacter = async ({
   characterId,
   params,
-}: getCharacterProps): Promise<iResponse<iCharacter>> => {
+}: getCharacterProps): Promise<iResponse<iCharacter[]>> => {
   const { limit = 10, ...restOfparams } = params;
   const response = await Axios.get(
     ApiRoutes.CHARACTER_BY_ID.replace(":id", characterId),

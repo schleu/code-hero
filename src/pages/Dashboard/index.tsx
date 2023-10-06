@@ -1,7 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import SearchIcon from "../../assets/search.svg";
 import { Cards } from "../../components/Cards";
-import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { TextField } from "../../components/TextField";
 import {
@@ -11,8 +10,8 @@ import {
 } from "../../service/Requests";
 import { iCharacter } from "../../types";
 
-import "./styles.scss";
 import { useDebounce } from "../../hooks/useDebounce";
+import "./styles.scss";
 
 export const DashboardPage = () => {
   const [characters, setCharacters] = useState<iCharacter[]>([]);
@@ -51,9 +50,8 @@ export const DashboardPage = () => {
   };
 
   return (
-    <div className="container">
-      <Header />
-      <div>Busca de personagens</div>
+    <>
+      <div className="titlePage">Busca de personagens</div>
 
       <TextField
         label={`Nome do personagem ${searchDebouced}`}
@@ -71,6 +69,6 @@ export const DashboardPage = () => {
           getActualPage={setActualPage}
         />
       </div>
-    </div>
+    </>
   );
 };
