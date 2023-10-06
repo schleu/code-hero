@@ -62,11 +62,14 @@ export const DashboardPage = () => {
 
       <div className="">
         <Cards characters={characters} />
-        <Pagination
-          actual={actualPage}
-          total={totalOfPages}
-          getActualPage={setActualPage}
-        />
+
+        {characters.length > 0 && (
+          <Pagination
+            actual={actualPage}
+            total={totalOfPages}
+            getActualPage={setActualPage}
+          />
+        )}
       </div>
     </div>
   );

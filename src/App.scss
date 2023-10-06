@@ -20,7 +20,6 @@
   }
 }
 
-
 #root {
   width: 100%;
   min-height: 100vh;
@@ -28,17 +27,18 @@
   justify-content: center;
 }
 
-
 ::-webkit-scrollbar {
   width: 2px;
   height: 10px;
 }
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+
 ::-webkit-scrollbar-thumb {
-  width: 300px!important;
-  background: linear-gradient(90deg,$color-secondary 0%,$color-100 55%,$color-secondary 100%);
+  background: $color-secondary;
   border-radius: $radii-16;
 }
 
+::-webkit-scrollbar-thumb:horizontal{
+  width: 100%;
+  max-width: 300px!important;
+  background: linear-gradient(90deg,$color-secondary 0%,$color-100 55%,$color-secondary 100%);
+}

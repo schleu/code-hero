@@ -48,8 +48,9 @@ export const HeroDetailPage = () => {
         {ChevronLeft()}
         Voltar
       </button>
+
       <div className="content">
-        <img src={srcImage} alt="" />
+        <img src={srcImage} alt="" width={"100%"} />
         <div className="infos">
           <h3>{character.name}</h3>
           <p className="description">
