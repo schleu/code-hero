@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import "./styles.scss";
-// import { ReactComponent as ChevronLeft } from "../../assets/ChevronLeft.svg";
+import ChevronLeft from "../../assets/ChevronLeft.svg";
+import ChevronRight from "../../assets/ChevronRight.svg";
 
 interface Props {
   total: number;
@@ -27,7 +28,10 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
     <div className="pagination">
       {actualPage > 1 && (
         <>
-          <Item page={"PREV"} callback={() => especificPage(previousPage)} />
+          <Item
+            page={<img src={ChevronLeft} />}
+            callback={() => especificPage(previousPage)}
+          />
           <Item page={1} callback={() => especificPage(1)} />
 
           {actualPage === 3 && (
@@ -68,12 +72,10 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
             </>
           )}
 
-          <div
-            className="paginationItem"
-            onClick={() => especificPage(nextPage)}
-          >
-            NEXT
-          </div>
+          <Item
+            page={<img src={ChevronRight} />}
+            callback={() => especificPage(nextPage)}
+          />
         </>
       )}
     </div>
@@ -81,7 +83,7 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
 };
 
 interface ItemProps {
-  page: number | string;
+  page: ReactNode;
   callback?: () => void;
   isSelected?: boolean;
 }
