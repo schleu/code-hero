@@ -25,27 +25,38 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
 
   return (
     <div className="pagination">
-      {actualPage > 1 && (
-        <>
-          <Item
-            page={ChevronLeft()}
-            callback={() => especificPage(previousPage)}
-          />
-          <Item page={1} callback={() => especificPage(1)} />
-        </>
+      {actualPage > 1 ? (
+        <Item
+          page={ChevronLeft()}
+          callback={() => especificPage(previousPage)}
+        />
+      ) : (
+        <FakeItem />
+      )}
+      {actualPage > 3 ? (
+        <Item page={1} callback={() => especificPage(1)} />
+      ) : (
+        <FakeItem />
       )}
 
-      {actualPage === 3 && <Item page={2} callback={() => especificPage(2)} />}
-
-      {actualPage > 3 && (
-        <>
-          <Item page={"..."} />
-          <Item
-            page={actualPage - 1}
-            callback={() => especificPage(previousPage)}
-          />
-        </>
+      {actualPage > 3 ? (
+        <Item page={"..."} />
+      ) : actualPage > 2 ? (
+        <Item page={1} callback={() => especificPage(1)} />
+      ) : (
+        <FakeItem />
       )}
+
+      {actualPage > 1 ? (
+        <Item
+          page={actualPage - 1}
+          callback={() => especificPage(previousPage)}
+        />
+      ) : (
+        <FakeItem />
+      )}
+
+      {/* Previous items */}
 
       <Item
         page={actualPage}
@@ -53,23 +64,34 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
         isSelected={true}
       />
 
-      {actualPage < total && (
+      {/* Next items */}
+
+      {actualPage < total ? (
         <Item page={actualPage + 1} callback={() => especificPage(nextPage)} />
+      ) : (
+        <FakeItem />
       )}
 
-      {actualPage === total - 2 && (
+      {actualPage < total - 3 ? (
+        <Item page={"..."} />
+      ) : actualPage < total - 2 ? (
+        <Item page={total - 1} callback={() => especificPage(total - 1)} />
+      ) : actualPage < total - 1 ? (
         <Item page={total} callback={() => especificPage(total)} />
+      ) : (
+        <FakeItem />
       )}
 
-      {actualPage <= total - 3 && (
-        <>
-          <Item page={"..."} />
-          <Item page={total} callback={() => especificPage(total)} />
-        </>
+      {actualPage < total - 2 ? (
+        <Item page={total} callback={() => especificPage(total)} />
+      ) : (
+        <FakeItem />
       )}
 
-      {actualPage < total && (
+      {actualPage < total ? (
         <Item page={ChevronRight()} callback={() => especificPage(nextPage)} />
+      ) : (
+        <FakeItem />
       )}
     </div>
   );
@@ -97,3 +119,5 @@ const Item = ({
     {page}
   </div>
 );
+
+const FakeItem = () => <div className="paginationItem fakeItem">FK</div>;
