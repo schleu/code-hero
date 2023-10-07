@@ -1,27 +1,7 @@
-import { iCharacter } from "../types";
-import { ApiRoutes } from "../constants/ApiRoutes";
-import { Axios } from "./api";
-
-export interface iResponse<T> {
-  count: number;
-  limit: number;
-  offset: number;
-  total: number;
-  results: T;
-}
-
-export interface ParamsRequest {
-  name?: string;
-  nameStartsWith?: string;
-  modifiedSince?: Date;
-  comics?: number;
-  series?: number;
-  events?: number;
-  stories?: number;
-  orderBy?: "name" | "modified" | "-name" | "-modified";
-  limit?: number;
-  offset?: number;
-}
+import { ApiRoutes } from "../../constants/ApiRoutes";
+import { ParamsRequest, iResponse } from "../../types";
+import { iCharacter } from "../../types/character";
+import { Axios } from "../api";
 
 export const getCharacters = async ({
   limit = 10,

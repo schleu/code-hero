@@ -1,32 +1,33 @@
 @import '../../../../scss/default.scss';
 
-.searchField{
+.searchFieldCustom{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%; 
-    max-width: 295px;
-    gap: 0.5rem;
-      
+    
+    @media (min-width: $screen-md) { 
+      max-width: 500px;
+  }
+    
     label{
-      font-weight: 700;
-      font-size: 24px;
-      color: #555555;
+      font-weight: $font-bold;
+      color: $color-primary;
     }
 
     .textFieldContent{
       width: 100%;
       position: relative;
+      border-bottom: solid 1px $color-primary;
 
       input{
-        
+        all: unset;
         width: 100%;
-        padding: 0.5rem 1rem;
-        border-radius: 0.25rem;
-        background-color: #FFF;
-        border: 1px solid #E5E5E5;
-        color: #8E8E8E;
+        padding: $pad-md;
+        border-radius: $radii-4;
+        background-color: transparent;
+        color: $color-secondary;
       }
       
       svg{
@@ -34,9 +35,9 @@
         height: 1rem;
         position: absolute;
         top: 50%;
-        right: 16px;
+        right: 0.5rem;
         transform: translate(0,-50%);
-        
+        color: $color-secondary;
       }
     }
   

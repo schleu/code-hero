@@ -1,9 +1,16 @@
-import { ReactNode, useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { getCharacter } from "../../service/Requests";
-import { iCharacter } from "../../types";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  BookIcon,
+  CalendarIcon,
+  ChevronLeft,
+  Star,
+  Television,
+} from "../../assets";
+import { getCharacter } from "../../service";
+import { iCharacter } from "../../types/character";
+import { Board } from "./components/Board";
 import "./styles.scss";
-import { BookIcon, CalendarIcon, ChevronLeft, Star } from "../../assets";
 
 export const HeroDetailPage = () => {
   const [character, setCharacter] = useState<iCharacter>({
@@ -73,31 +80,13 @@ export const HeroDetailPage = () => {
               items={character.stories.items}
               titleIcon={Star()}
             />
+            <Board
+              title="Séries"
+              items={character.series.items}
+              titleIcon={Television}
+            />
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
-
-interface Props {
-  items: { name: string }[];
-  title: string;
-  titleIcon: ReactNode;
-}
-const Board = ({ items, title, titleIcon }: Props) => {
-  return (
-    <div className="table">
-      <p className="title">
-        <span>{titleIcon}</span>
-        {title}
-      </p>
-      <div className="items">
-        {items.length ? (
-          items.map((item) => <p className="item">{item.name}</p>)
-        ) : (
-          <p className="item not_found">Nenhum item encontrado.</p>
-        )}
       </div>
     </div>
   );

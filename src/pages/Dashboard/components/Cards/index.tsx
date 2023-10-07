@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { SadFaceIcon } from "../../../../assets";
-import { iCharacter } from "../../../../types";
+import { iCharacter } from "../../../../types/character";
+import { Card } from "./Card";
 import "./styles.scss";
 
 interface Props {
@@ -15,33 +16,21 @@ export const Cards = ({ characters }: Props) => {
   }, [characters]);
 
   return (
-    <div className="cardContainer" ref={ref}>
+    <div className="cardsContainer" ref={ref}>
+      <div className="cardsTitles">
+        <p>Personagem</p>
+        <p>Séries</p>
+        <p>Eventos</p>
+      </div>
       {characters.length ? (
-        characters.map((character, i) => {
-          const imgSrc =
-            character.thumbnail.path + "." + character.thumbnail.extension;
-          return (
-            <a href={`/${character.id}`} key={character.id}>
-              <div className="card">
-                <img src={imgSrc} alt="" />
-                <div className="infos">
-                  <p className="title">{character.name + (i + 1)}</p>
-
-                  <p
-                    className={`description ${
-                      character.description ? "" : "notFound"
-                    }`}
-                  >
-                    {character.description || "Nenhuma descrição encontrada"}
-                  </p>
-                </div>
-              </div>
-            </a>
-          );
-        })
+        <div className="cardsContent">
+          {characters.map((character) => (
+            <Card key={character.id} character={character} />
+          ))}
+        </div>
       ) : (
-        <div className="notFound">
-          {SadFaceIcon()}
+        <div className="cardsNotFound">
+          <SadFaceIcon />
           Nenhum personagem encontrado
         </div>
       )}

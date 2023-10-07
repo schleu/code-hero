@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { SearchIcon } from "../../../../assets";
+import { Search } from "../../../../assets";
 import "./styles.scss";
 
 interface Props extends HTMLAttributes<HTMLInputElement> {
@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLInputElement> {
 
 export const SearchField = ({ label, ...props }: Props) => {
   return (
-    <div className="searchField">
+    <div className="searchFieldCustom">
       <label htmlFor="search" data-testid={"searchField"}>
         {label}
       </label>
@@ -18,7 +18,7 @@ export const SearchField = ({ label, ...props }: Props) => {
           id="search"
           {...props}
         />
-        <SearchIcon />
+        <Search />
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
   const nextPage = actualPage + 1;
 
   return (
-    <div className="pagination">
+    <div className="paginationCustom">
       {actualPage > 1 ? (
         <Item
           page={ChevronLeft()}

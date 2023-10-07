@@ -1,18 +1,17 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Cards } from "./components/Cards";
+import { Pagination } from "../../components/Pagination";
 import { iCharacter } from "../../types/character";
+
 import { useDebounce } from "../../hooks/useDebounce";
 import { SearchField } from "./components/SearchField";
+import "./styles.scss";
 import { ParamsRequest, iResponse } from "../../types";
 import { getCharacters } from "../../service";
-import { Header } from "./components/Header";
-import { Pagination } from "./components/Pagination";
 
-import "./styles.scss";
-
-export const DashboardPage = () => {
+export const DashboardPageCustom = () => {
   const [characters, setCharacters] = useState<iCharacter[]>([]);
-  const [actualPage, setActualPage] = useState(157);
+  const [actualPage, setActualPage] = useState(1);
   const [search, setSearch] = useState("");
   const [totalOfPages, setTotalOfPages] = useState(1);
 
@@ -47,21 +46,19 @@ export const DashboardPage = () => {
   };
 
   return (
-    <div className="dashboardPage">
-      <Header />
-      <div className="dashboardContainer">
-        <div className="titlePage">Busca de personagens</div>
+    <div className="dashboardPageCustom">
+      <div className="titlePage">Descubra esse universo incrível!</div>
 
-        <SearchField
-          label="Nome do personagem"
-          onChange={handleSearch}
-          defaultValue={search}
-          placeholder="Search"
-        />
+      <SearchField
+        label="Qual personagem deseja encontrar?"
+        onChange={handleSearch}
+        defaultValue={search}
+        placeholder="Digite aqui o nome de seu personagem"
+      />
 
+      <div className="">
         <Cards characters={characters} />
-      </div>
-      <div className="footer">
+
         {characters.length > 0 && (
           <Pagination
             actual={actualPage}

@@ -1,4 +1,4 @@
-import CodeHeroIcon from "../../assets/codeHero.svg";
+import LogoIcon from "../../../../assets/objectiveLogo.svg";
 import "./styles.scss";
 
 export const Header = () => {
@@ -17,13 +17,14 @@ export const Header = () => {
   const initials = getInitials();
 
   return (
-    <div className="headerContainerCustom">
+    <div className="headerContainer">
       <div className="headerContent">
-        <a href="/">
-          <img src={CodeHeroIcon} alt="" data-testid="logo" />
-        </a>
+        <img src={LogoIcon} alt="" data-testid="logo" />
+
         <div className="menu">
-          <p>Danilo Schleu</p>
+          <p>
+            <span>{userName}</span> Teste de Front-end
+          </p>
           <div className="initials">{initials}</div>
         </div>
       </div>

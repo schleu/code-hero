@@ -1,0 +1,65 @@
+@import '../../../../../scss/default.scss';
+
+.card{
+  width: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px $color-defaul-blur;
+  border-radius: 4px;
+  
+  &:hover{
+    box-shadow: 0px 0px 5px $color-defaul-gray-400;
+  }
+
+  .cardContant{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 0.5rem;
+    padding: 1.25rem 1.5rem;
+
+    transition: all 0.7s ease-in-out;
+    cursor: pointer;
+    
+    
+    img{
+      width: 3rem;
+      height: 3rem;
+      border-radius: 4px;
+    }
+
+    .info{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      p{
+        color:#555555;
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+
+    .series{
+      display: flex;
+      flex-direction: column;
+      height: 50px;
+      overflow-y: auto;
+      p{
+        font-size: 14px;
+        color: #555555;
+      }
+    }
+
+    .events{
+      display: flex;
+      flex-direction: column;
+      height: 50px;
+      overflow-y: auto;
+      p{
+        font-size: 14px;
+        color: #555555;
+      }
+    }  
+    
+  }
+}
+ 

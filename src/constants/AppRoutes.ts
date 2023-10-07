@@ -1,4 +1,5 @@
 export const AppRoutes = {
-  DASHBOARD: "/",
+  HOME: "/",
+  CUSTOM: "/custom",
   HERO_DETAIL: "/:id",
 };
