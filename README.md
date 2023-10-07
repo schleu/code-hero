@@ -1,27 +1,27 @@
-# React + TypeScript + Vite
+# Code Hero
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto que mostra personagens do universo Marvel.
 
-Currently, two official plugins are available:
+Utilizando a [API Marvel](https://developer.marvel.com/documentation/getting_started).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Steps
 
-## Expanding the ESLint configuration
+- Duplique o arquivo `.exemple.env`
+- Altere os valores `[INSERT_YOUR_PUBLIC_KEY]` com sua chave publica
+- Altere os valores `[INSERT_YOUR_PRIVATE_KEY]` com sua chave privada
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+VITE_APP_MARVEL_URL=https://gateway.marvel.com/v1/public
+VITE_APP_MARVEL_PUBLIC_KEY=[INSERT_YOUR_PUBLIC_KEY]
+VITE_APP_MARVEL_PRIVATE_KEY=[INSERT_YOUR_PRIVATE_KEY]
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Execute o comando `yarn`
+- Execute o comando `yarn dev`
+- O projeto será executado em [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
+
+# Telas
+
+- Home [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
+- Home Custom [http://127.0.0.1:5173/custom](http://127.0.0.1:5173/custom)
+- Personagem [http://127.0.0.1:5173/1009368](http://127.0.0.1:5173/1009368)
