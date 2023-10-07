@@ -13,14 +13,12 @@
   .cardContant{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(1,1fr);
     gap: 0.5rem;
     padding: 1.25rem 1.5rem;
-
     transition: all 0.7s ease-in-out;
     cursor: pointer;
-    
-    
+ 
     img{
       width: 3rem;
       height: 3rem;
@@ -39,7 +37,7 @@
     }
 
     .series{
-      display: flex;
+      display: none;
       flex-direction: column;
       height: 50px;
       overflow-y: auto;
@@ -50,7 +48,7 @@
     }
 
     .events{
-      display: flex;
+      display: none;
       flex-direction: column;
       height: 50px;
       overflow-y: auto;
@@ -58,8 +56,17 @@
         font-size: 14px;
         color: #555555;
       }
-    }  
-    
+    }
+
+    @media (min-width: $screen-md) { 
+      grid-template-columns: repeat(3,1fr);
+      .series{
+        display: flex;
+      }
+      .events{
+        display: flex;
+      }
+    }
   }
 }
  

@@ -1,4 +1,5 @@
 import { iCharacter } from "../../../../../types";
+import { Link } from "react-router-dom";
 import "./styles.scss";
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
 export const Card = ({ character }: Props) => {
   const imgSrc = character.thumbnail.path + "." + character.thumbnail.extension;
   return (
-    <a href={`/${character.id}`} key={character.id} className="card">
+    <Link to={`/${character.id}`} key={character.id} className="card">
       <div className="cardContant">
         <div className="info">
           <img src={imgSrc} alt="" />
@@ -26,6 +27,6 @@ export const Card = ({ character }: Props) => {
           ))}
         </div>
       </div>
-    </a>
+    </Link>
   );
 };

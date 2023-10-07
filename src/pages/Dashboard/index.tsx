@@ -12,14 +12,15 @@ import "./styles.scss";
 
 export const DashboardPage = () => {
   const [characters, setCharacters] = useState<iCharacter[]>([]);
-  const [actualPage, setActualPage] = useState(157);
+  const [actualPage, setActualPage] = useState(1);
   const [search, setSearch] = useState("");
   const [totalOfPages, setTotalOfPages] = useState(1);
 
-  const itensPerPage = 10;
-  const offset = itensPerPage * (actualPage - 1);
-
   const searchDebouced = useDebounce(() => search, 300)();
+  const actualPageDebouced = useDebounce(() => actualPage, 300)();
+
+  const itensPerPage = 10;
+  const offset = itensPerPage * (actualPageDebouced - 1);
 
   useEffect(() => {
     const getData = async () => {

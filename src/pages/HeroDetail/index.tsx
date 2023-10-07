@@ -68,22 +68,26 @@ export const HeroDetailPage = () => {
             <Board
               title="Comics"
               items={character.comics.items}
-              titleIcon={BookIcon()}
+              titleIcon={<BookIcon />}
+              isOpen={true}
             />
-            <Board
-              title="Eventos"
-              items={character.events.items}
-              titleIcon={CalendarIcon()}
-            />
+
             <Board
               title="Histórias"
               items={character.stories.items}
-              titleIcon={Star()}
+              titleIcon={<Star />}
             />
+
             <Board
               title="Séries"
               items={character.series.items}
               titleIcon={Television}
+            />
+
+            <Board
+              title="Eventos"
+              items={character.events.items}
+              titleIcon={<CalendarIcon />}
             />
           </div>
         </div>
