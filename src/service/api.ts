@@ -1,5 +1,5 @@
 import axios from "axios";
-import md5 from "md5";
+import * as md5 from "md5";
 
 const baseURl = process.env.VITE_APP_MARVEL_URL || "";
 const apiKey = process.env.VITE_APP_MARVEL_PUBLIC_KEY || "";

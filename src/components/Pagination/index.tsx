@@ -29,6 +29,7 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
         <Item
           page={ChevronLeft()}
           callback={() => especificPage(previousPage)}
+          className="previousPage"
         />
       ) : (
         <FakeItem />
@@ -89,7 +90,11 @@ export const Pagination = ({ actual, total, getActualPage }: Props) => {
       )}
 
       {actualPage < total ? (
-        <Item page={ChevronRight()} callback={() => especificPage(nextPage)} />
+        <Item
+          page={ChevronRight()}
+          callback={() => especificPage(nextPage)}
+          className="nextPage"
+        />
       ) : (
         <FakeItem />
       )}
@@ -111,6 +116,7 @@ const Item = ({
   className = "",
 }: ItemProps) => (
   <div
+    data-testid={className || "paginationItem"}
     className={`paginationItem ${
       isSelected ? "paginationItemSelected" : ""
     } ${className}`}
@@ -120,4 +126,6 @@ const Item = ({
   </div>
 );
 
-const FakeItem = () => <div className="paginationItem fakeItem">FK</div>;
+const FakeItem = () => (
+  <div data-testid="fakeItem" className="paginationItem fakeItem" />
+);

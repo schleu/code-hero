@@ -20,7 +20,7 @@ export const Header = () => {
     <div className="headerContainer">
       <div className="headerContent">
         <a href="/">
-          <img src={CodeHeroIcon} alt="" />
+          <img src={CodeHeroIcon} alt="" data-testid="logo" />
         </a>
         <div className="menu">
           <p>Danilo Schleu</p>

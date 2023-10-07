@@ -70,6 +70,7 @@ export const DashboardPage = () => {
             getActualPage={setActualPage}
           />
         )}
+        <Pagination actual={6} total={10} getActualPage={setActualPage} />
       </div>
     </div>
   );
