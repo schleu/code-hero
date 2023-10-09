@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Axios } from "../../../../service/api";
 import { thumbnail } from "../../../../types";
 import imgDefault from "../../../../assets/imgDefault.jpg";
+import { cacheRequest } from "../../../../hooks/cacheRequest";
 
 interface Props {
   name: string;
@@ -12,10 +13,14 @@ export function BoardItem({ name, resourceURI }: Props) {
 
   useEffect(() => {
     const getImage = async () => {
-      const resp = await Axios({
-        baseURL: resourceURI,
-        method: "GET",
-      });
+      const resp = await cacheRequest([resourceURI], () =>
+        Axios({
+          baseURL: resourceURI,
+          method: "GET",
+        })
+      );
+
+      console.log("resp", resp);
 
       const result = resp.data.data.results[0];
       const images = result?.images ? result.images[0] : "";

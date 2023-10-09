@@ -1,40 +1,48 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { Cards } from "./components/Cards";
-import { iCharacter } from "../../types/character";
 import { useDebounce } from "../../hooks/useDebounce";
-import { SearchField } from "./components/SearchField";
-import { ParamsRequest, iResponse } from "../../types";
 import { getCharacters } from "../../service";
+import { ParamsRequest, iResponse } from "../../types";
+import { iCharacter } from "../../types/character";
+import { Cards } from "./components/Cards";
 import { Header } from "./components/Header";
 import { Pagination } from "./components/Pagination";
+import { SearchField } from "./components/SearchField";
 
 import "./styles.scss";
+import { cacheRequest } from "../../hooks/cacheRequest";
 
 export const DashboardPage = () => {
   const [characters, setCharacters] = useState<iCharacter[]>([]);
   const [actualPage, setActualPage] = useState(1);
   const [search, setSearch] = useState("");
   const [totalOfPages, setTotalOfPages] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const searchDebouced = useDebounce(() => search, 300)();
   const actualPageDebouced = useDebounce(() => actualPage, 300)();
-
   const itensPerPage = 10;
   const offset = itensPerPage * (actualPageDebouced - 1);
 
   useEffect(() => {
-    const getData = async () => {
-      const params: ParamsRequest = {
-        limit: itensPerPage,
-        offset,
-      };
-      if (search) params.nameStartsWith = search;
+    setIsLoading(true);
+    const params: ParamsRequest = {
+      limit: itensPerPage,
+      offset,
+    };
 
-      const characters: iResponse<iCharacter[]> = await getCharacters(params);
-      const totalOfPages = Math.ceil(characters.total / itensPerPage);
+    if (search) params.nameStartsWith = search;
+
+    const getData = async () => {
+      const data = await cacheRequest<iResponse<iCharacter[]>>(
+        ["characters", offset, search],
+        () => getCharacters(params)
+      );
+
+      const totalOfPages = Math.ceil(data.total / itensPerPage);
 
       setTotalOfPages(totalOfPages);
-      setCharacters(characters.results);
+      setCharacters(data.results);
+      setIsLoading(false);
     };
 
     getData();
@@ -47,7 +55,9 @@ export const DashboardPage = () => {
     setSearch(search);
   };
 
-  return (
+  return isLoading ? (
+    <>Carregando...</>
+  ) : (
     <div className="dashboardPage">
       <Header />
       <div className="dashboardContainer">

@@ -2,8 +2,12 @@
 
 .containerHeroDetail{
     width: 100%;
-    max-height: 600px;
+    max-height: inherit;
     padding: $pad-xl;
+
+    @media (min-width: $screen-lg) { 
+        max-height: 600px;
+    }
 
     .backButton{
         all: unset;

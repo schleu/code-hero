@@ -11,6 +11,8 @@ import { getCharacter } from "../../service";
 import { iCharacter } from "../../types/character";
 import { Board } from "./components/Board";
 import "./styles.scss";
+import { cacheRequest } from "../../hooks/cacheRequest";
+import { iResponse } from "../../types";
 
 export const HeroDetailPage = () => {
   const [character, setCharacter] = useState<iCharacter>({
@@ -34,7 +36,10 @@ export const HeroDetailPage = () => {
     const getData = async () => {
       setIsLoading(true);
       if (typeof id === "string") {
-        const response = await getCharacter({ characterId: id, params: {} });
+        const response = await cacheRequest<iResponse<iCharacter[]>>(
+          ["character", id],
+          () => getCharacter({ characterId: id, params: {} })
+        );
 
         setCharacter(response.results[0]);
         setIsLoading(false);
