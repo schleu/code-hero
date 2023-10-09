@@ -20,9 +20,7 @@ export function BoardItem({ name, resourceURI }: Props) {
         })
       );
 
-      console.log("resp", resp);
-
-      const result = resp.data.data.results[0];
+      const result = resp?.data?.data.results[0];
       const images = result?.images ? result.images[0] : "";
       const thumbnail = result?.thumbnail !== null ? result.thumbnail : "";
 
