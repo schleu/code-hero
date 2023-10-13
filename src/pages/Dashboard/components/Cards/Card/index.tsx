@@ -1,6 +1,7 @@
 import { iCharacter } from "../../../../../types";
 import { Link } from "react-router-dom";
 import "./styles.scss";
+import { AppRoutes } from "../../../../../constants/AppRoutes";
 
 interface Props {
   character: iCharacter;
@@ -8,7 +9,11 @@ interface Props {
 export const Card = ({ character }: Props) => {
   const imgSrc = character.thumbnail.path + "." + character.thumbnail.extension;
   return (
-    <Link to={`/${character.id}`} key={character.id} className="card">
+    <Link
+      to={AppRoutes.HERO_DETAIL.replace(":id", String(character.id))}
+      key={character.id}
+      className="card"
+    >
       <div className="cardContant">
         <div className="info">
           <img src={imgSrc} alt="" />

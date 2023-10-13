@@ -6,7 +6,7 @@ exports[`<Pagination /> > Pagination Snapshot 1-10 > Default 1-10 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pagination"
+        class="paginationCustom"
       >
         <div
           class="paginationItem fakeItem"
@@ -71,7 +71,7 @@ exports[`<Pagination /> > Pagination Snapshot 1-10 > Default 1-10 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pagination"
+      class="paginationCustom"
     >
       <div
         class="paginationItem fakeItem"
@@ -193,7 +193,7 @@ exports[`<Pagination /> > Pagination Snapshot 5-10 > Default  5-10 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pagination"
+        class="paginationCustom"
       >
         <div
           class="paginationItem  previousPage"
@@ -278,7 +278,7 @@ exports[`<Pagination /> > Pagination Snapshot 5-10 > Default  5-10 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pagination"
+      class="paginationCustom"
     >
       <div
         class="paginationItem  previousPage"
@@ -420,7 +420,7 @@ exports[`<Pagination /> > Pagination Snapshot 10-10 > Default  10-10 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pagination"
+        class="paginationCustom"
       >
         <div
           class="paginationItem  previousPage"
@@ -485,7 +485,7 @@ exports[`<Pagination /> > Pagination Snapshot 10-10 > Default  10-10 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pagination"
+      class="paginationCustom"
     >
       <div
         class="paginationItem  previousPage"

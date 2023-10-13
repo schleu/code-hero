@@ -11,20 +11,19 @@ exports[`<Header /> > Header Snapshot > Default 1`] = `
         <div
           class="headerContent"
         >
-          <a
-            href="/"
-          >
-            <img
-              alt=""
-              data-testid="logo"
-              src="/src/assets/codeHero.svg"
-            />
-          </a>
+          <img
+            alt=""
+            data-testid="logo"
+            src="/src/assets/objectiveLogo.svg"
+          />
           <div
             class="menu"
           >
             <p>
-              Danilo Schleu
+              <span>
+                Danilo Schleu
+              </span>
+               Teste de Front-end
             </p>
             <div
               class="initials"
@@ -43,20 +42,19 @@ exports[`<Header /> > Header Snapshot > Default 1`] = `
       <div
         class="headerContent"
       >
-        <a
-          href="/"
-        >
-          <img
-            alt=""
-            data-testid="logo"
-            src="/src/assets/codeHero.svg"
-          />
-        </a>
+        <img
+          alt=""
+          data-testid="logo"
+          src="/src/assets/objectiveLogo.svg"
+        />
         <div
           class="menu"
         >
           <p>
-            Danilo Schleu
+            <span>
+              Danilo Schleu
+            </span>
+             Teste de Front-end
           </p>
           <div
             class="initials"

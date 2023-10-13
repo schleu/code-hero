@@ -17,40 +17,38 @@ exports[`<Pagination /> > Pagination Snapshot 1-10 > Default 1-10 1`] = `
           data-testid="fakeItem"
         />
         <div
-          class="paginationItem fakeItem"
-          data-testid="fakeItem"
-        />
-        <div
-          class="paginationItem fakeItem"
-          data-testid="fakeItem"
-        />
-        <div
-          class="paginationItem paginationItemSelected "
-          data-testid="paginationItem"
+          class="paginationItem paginationItemSelected paginationNumber "
+          data-testid="paginationNumber"
         >
           1
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
           2
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
-          ...
+          3
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
-          10
+          4
         </div>
         <div
-          class="paginationItem  nextPage"
-          data-testid="nextPage"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
+        >
+          5
+        </div>
+        <div
+          class="paginationItem   "
+          data-testid="paginationItem"
         >
           <svg
             fill="none"
@@ -61,6 +59,24 @@ exports[`<Pagination /> > Pagination Snapshot 1-10 > Default 1-10 1`] = `
           >
             <path
               d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div
+          class="paginationItem   "
+          data-testid="paginationItem"
+        >
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
@@ -82,40 +98,38 @@ exports[`<Pagination /> > Pagination Snapshot 1-10 > Default 1-10 1`] = `
         data-testid="fakeItem"
       />
       <div
-        class="paginationItem fakeItem"
-        data-testid="fakeItem"
-      />
-      <div
-        class="paginationItem fakeItem"
-        data-testid="fakeItem"
-      />
-      <div
-        class="paginationItem paginationItemSelected "
-        data-testid="paginationItem"
+        class="paginationItem paginationItemSelected paginationNumber "
+        data-testid="paginationNumber"
       >
         1
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
         2
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
-        ...
+        3
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
-        10
+        4
       </div>
       <div
-        class="paginationItem  nextPage"
-        data-testid="nextPage"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
+      >
+        5
+      </div>
+      <div
+        class="paginationItem   "
+        data-testid="paginationItem"
       >
         <svg
           fill="none"
@@ -126,6 +140,24 @@ exports[`<Pagination /> > Pagination Snapshot 1-10 > Default 1-10 1`] = `
         >
           <path
             d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div
+        class="paginationItem   "
+        data-testid="paginationItem"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
@@ -196,8 +228,26 @@ exports[`<Pagination /> > Pagination Snapshot 5-10 > Default  5-10 1`] = `
         class="pagination"
       >
         <div
-          class="paginationItem  previousPage"
-          data-testid="previousPage"
+          class="paginationItem   "
+          data-testid="paginationItem"
+        >
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div
+          class="paginationItem   "
+          data-testid="paginationItem"
         >
           <svg
             fill="none"
@@ -214,50 +264,38 @@ exports[`<Pagination /> > Pagination Snapshot 5-10 > Default  5-10 1`] = `
           </svg>
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
           1
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
-          ...
+          2
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
+        >
+          3
+        </div>
+        <div
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
           4
         </div>
         <div
-          class="paginationItem paginationItemSelected "
-          data-testid="paginationItem"
+          class="paginationItem paginationItemSelected paginationNumber "
+          data-testid="paginationNumber"
         >
           5
         </div>
         <div
-          class="paginationItem  "
+          class="paginationItem   "
           data-testid="paginationItem"
-        >
-          6
-        </div>
-        <div
-          class="paginationItem  "
-          data-testid="paginationItem"
-        >
-          ...
-        </div>
-        <div
-          class="paginationItem  "
-          data-testid="paginationItem"
-        >
-          10
-        </div>
-        <div
-          class="paginationItem  nextPage"
-          data-testid="nextPage"
         >
           <svg
             fill="none"
@@ -273,6 +311,24 @@ exports[`<Pagination /> > Pagination Snapshot 5-10 > Default  5-10 1`] = `
             />
           </svg>
         </div>
+        <div
+          class="paginationItem   "
+          data-testid="paginationItem"
+        >
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </body>,
@@ -281,8 +337,26 @@ exports[`<Pagination /> > Pagination Snapshot 5-10 > Default  5-10 1`] = `
       class="pagination"
     >
       <div
-        class="paginationItem  previousPage"
-        data-testid="previousPage"
+        class="paginationItem   "
+        data-testid="paginationItem"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div
+        class="paginationItem   "
+        data-testid="paginationItem"
       >
         <svg
           fill="none"
@@ -299,50 +373,38 @@ exports[`<Pagination /> > Pagination Snapshot 5-10 > Default  5-10 1`] = `
         </svg>
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
         1
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
-        ...
+        2
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
+      >
+        3
+      </div>
+      <div
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
         4
       </div>
       <div
-        class="paginationItem paginationItemSelected "
-        data-testid="paginationItem"
+        class="paginationItem paginationItemSelected paginationNumber "
+        data-testid="paginationNumber"
       >
         5
       </div>
       <div
-        class="paginationItem  "
+        class="paginationItem   "
         data-testid="paginationItem"
-      >
-        6
-      </div>
-      <div
-        class="paginationItem  "
-        data-testid="paginationItem"
-      >
-        ...
-      </div>
-      <div
-        class="paginationItem  "
-        data-testid="paginationItem"
-      >
-        10
-      </div>
-      <div
-        class="paginationItem  nextPage"
-        data-testid="nextPage"
       >
         <svg
           fill="none"
@@ -353,6 +415,24 @@ exports[`<Pagination /> > Pagination Snapshot 5-10 > Default  5-10 1`] = `
         >
           <path
             d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div
+        class="paginationItem   "
+        data-testid="paginationItem"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
@@ -423,8 +503,26 @@ exports[`<Pagination /> > Pagination Snapshot 10-10 > Default  10-10 1`] = `
         class="pagination"
       >
         <div
-          class="paginationItem  previousPage"
-          data-testid="previousPage"
+          class="paginationItem   "
+          data-testid="paginationItem"
+        >
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div
+          class="paginationItem   "
+          data-testid="paginationItem"
         >
           <svg
             fill="none"
@@ -441,37 +539,35 @@ exports[`<Pagination /> > Pagination Snapshot 10-10 > Default  10-10 1`] = `
           </svg>
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
-          1
+          6
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
-          ...
+          7
         </div>
         <div
-          class="paginationItem  "
-          data-testid="paginationItem"
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
+        >
+          8
+        </div>
+        <div
+          class="paginationItem  paginationNumber "
+          data-testid="paginationNumber"
         >
           9
         </div>
         <div
-          class="paginationItem paginationItemSelected "
-          data-testid="paginationItem"
+          class="paginationItem paginationItemSelected paginationNumber "
+          data-testid="paginationNumber"
         >
           10
         </div>
-        <div
-          class="paginationItem fakeItem"
-          data-testid="fakeItem"
-        />
-        <div
-          class="paginationItem fakeItem"
-          data-testid="fakeItem"
-        />
         <div
           class="paginationItem fakeItem"
           data-testid="fakeItem"
@@ -488,8 +584,26 @@ exports[`<Pagination /> > Pagination Snapshot 10-10 > Default  10-10 1`] = `
       class="pagination"
     >
       <div
-        class="paginationItem  previousPage"
-        data-testid="previousPage"
+        class="paginationItem   "
+        data-testid="paginationItem"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div
+        class="paginationItem   "
+        data-testid="paginationItem"
       >
         <svg
           fill="none"
@@ -506,37 +620,35 @@ exports[`<Pagination /> > Pagination Snapshot 10-10 > Default  10-10 1`] = `
         </svg>
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
-        1
+        6
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
-        ...
+        7
       </div>
       <div
-        class="paginationItem  "
-        data-testid="paginationItem"
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
+      >
+        8
+      </div>
+      <div
+        class="paginationItem  paginationNumber "
+        data-testid="paginationNumber"
       >
         9
       </div>
       <div
-        class="paginationItem paginationItemSelected "
-        data-testid="paginationItem"
+        class="paginationItem paginationItemSelected paginationNumber "
+        data-testid="paginationNumber"
       >
         10
       </div>
-      <div
-        class="paginationItem fakeItem"
-        data-testid="fakeItem"
-      />
-      <div
-        class="paginationItem fakeItem"
-        data-testid="fakeItem"
-      />
       <div
         class="paginationItem fakeItem"
         data-testid="fakeItem"

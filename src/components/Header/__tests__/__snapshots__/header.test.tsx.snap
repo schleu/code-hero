@@ -6,7 +6,7 @@ exports[`<Header /> > Header Snapshot > Default 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="headerContainer"
+        class="headerContainerCustom"
       >
         <div
           class="headerContent"
@@ -38,7 +38,7 @@ exports[`<Header /> > Header Snapshot > Default 1`] = `
   </body>,
   "container": <div>
     <div
-      class="headerContainer"
+      class="headerContainerCustom"
     >
       <div
         class="headerContent"

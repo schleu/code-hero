@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLInputElement> {
 
 export const SearchField = ({ label, ...props }: Props) => {
   return (
-    <div className="searchFieldCustom">
+    <div className="searchFieldCustom" data-testid={"searchFieldCustom"}>
       <label htmlFor="search" data-testid={"searchField"}>
         {label}
       </label>
