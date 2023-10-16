@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "../Header";
-import "./styles.scss";
+import { Header } from "../Headers";
 import { LinkedinIcon } from "../../assets";
+import "./styles.scss";
 
 export const MasterLayout = () => {
   return (

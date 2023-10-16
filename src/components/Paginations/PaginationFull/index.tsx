@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "../../../assets";
 import { PerPage } from "./components/PerPage";
 import "./styles.scss";
 import { ChangePage } from "./components/ChangePage";

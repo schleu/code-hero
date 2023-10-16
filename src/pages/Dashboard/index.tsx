@@ -4,7 +4,7 @@ import { getCharacters } from "../../service";
 import { ParamsRequest, iResponse } from "../../types";
 import { iCharacter } from "../../types/character";
 import { Cards } from "./components/Cards";
-import { Header } from "./components/Header";
+import { Header } from "../../components/Headers/Model02";
 import { SearchField } from "./components/SearchField";
 
 import "./styles.scss";
@@ -55,9 +55,7 @@ export const DashboardPage = () => {
     setSearch(search);
   };
 
-  return isLoading ? (
-    <>Carregando...</>
-  ) : (
+  return (
     <div className="dashboardPage">
       <Header />
       <div className="dashboardContainer">
@@ -70,7 +68,7 @@ export const DashboardPage = () => {
           placeholder="Search"
         />
 
-        <Cards characters={characters} />
+        {isLoading ? <>Carregando...</> : <Cards characters={characters} />}
       </div>
       <div className="footer">
         {characters.length > 0 && (

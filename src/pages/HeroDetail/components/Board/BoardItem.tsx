@@ -13,7 +13,7 @@ export function BoardItem({ name, resourceURI }: Props) {
 
   useEffect(() => {
     const getImage = async () => {
-      const resp = await cacheRequest([resourceURI], () =>
+      const resp = await cacheRequest<any>([resourceURI], () =>
         Axios({
           baseURL: resourceURI,
           method: "GET",
