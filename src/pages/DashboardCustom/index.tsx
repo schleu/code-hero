@@ -1,6 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Cards } from "./components/Cards";
-import { Pagination } from "../../components/Pagination";
 import { iCharacter } from "../../types/character";
 
 import { useDebounce } from "../../hooks/useDebounce";
@@ -8,6 +7,7 @@ import { SearchField } from "./components/SearchField";
 import "./styles.scss";
 import { ParamsRequest, iResponse } from "../../types";
 import { getCharacters } from "../../service";
+import { Pagination } from "../../components/Paginations/Pagination";
 
 export const DashboardPageCustom = () => {
   const [characters, setCharacters] = useState<iCharacter[]>([]);

@@ -5,11 +5,11 @@ import { ParamsRequest, iResponse } from "../../types";
 import { iCharacter } from "../../types/character";
 import { Cards } from "./components/Cards";
 import { Header } from "./components/Header";
-import { Pagination } from "./components/Pagination";
 import { SearchField } from "./components/SearchField";
 
 import "./styles.scss";
 import { cacheRequest } from "../../hooks/cacheRequest";
+import { Pagination } from "../../components/Paginations/Pagination01";
 
 export const DashboardPage = () => {
   const [characters, setCharacters] = useState<iCharacter[]>([]);

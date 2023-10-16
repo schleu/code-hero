@@ -1,4 +1,4 @@
-import LogoIcon from "../../../../assets/objectiveLogo.svg";
+import LogoIcon from "../../../../assets/codeHero.svg";
 import "./styles.scss";
 
 export const Header = () => {
@@ -23,7 +23,7 @@ export const Header = () => {
 
         <div className="menu">
           <p>
-            <span>{userName}</span> Teste de Front-end
+            <span>{userName}</span> Front-end
           </p>
           <div className="initials">{initials}</div>
         </div>

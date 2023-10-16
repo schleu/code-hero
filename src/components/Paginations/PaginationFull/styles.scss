@@ -1,0 +1,60 @@
+@import '../../../scss/default.scss';
+
+.PaginationFullContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+
+    .paginationPage{
+        display: flex;
+        gap: 1rem;
+        p{font-weight: 700;}
+    }
+    .paginationItens{
+        display: flex;
+        gap: 1rem;
+        p{font-weight: 700;}
+    }
+
+    .paginationChangePage{
+        display: flex;
+        align-items: center;
+
+        .selection{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+
+            .options{
+                height: 0px;
+                overflow-y: scroll;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translateY(-100%);
+                .option{
+                    height: 30px;
+                    cursor: pointer;
+                }
+            }
+            .showOptions{
+                height: 100px;
+            }
+        }
+        
+        .buttons{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            button{
+                all: unset;
+                cursor: pointer;
+            }
+        }
+    }
+
+}

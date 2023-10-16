@@ -1,0 +1,64 @@
+@import '../../../../../scss/default.scss';
+
+.perPageContainer{
+    position: relative;
+    min-width: 130px;
+    
+    .actualPerPage{
+        height: 30px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 0.5rem;
+        transition: all 0.3s ease-in-out;
+        
+        p{
+            font-weight: 700;
+        }
+        svg{
+            cursor: pointer;
+            transform: rotate(90deg); 
+        }
+    }
+
+    .rotate{
+        svg{
+            transform: rotate(-90deg); 
+        }
+    }
+
+    .options{
+        position: absolute;
+        left: 0;
+        z-index: 999;
+        height: 0px;
+        overflow-y: scroll;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background-color: $color-300;
+        
+        .option{
+            width: 50px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease-in-out;
+            color: $color-850;
+
+            &:hover{
+                background-color:$color-400;
+            }
+        }
+    }
+
+    .showOptions{
+        height: 100px;
+    }
+
+    .optionsUpper{
+        top: 0;
+        transform: translateY(-100%);
+    }
+}

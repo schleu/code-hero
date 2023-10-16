@@ -3,7 +3,7 @@ import { iComics } from "../../types/comics";
 import { ParamsRequest, iResponse } from "../../types/Requests";
 import { Axios } from "../api";
 
-export const getComics = async (
+export const getEvents = async (
   params: ParamsRequest
 ): Promise<iResponse<iComics[]>> => {
   const { limit = 10, ...parameters } = params;
@@ -23,7 +23,7 @@ interface getComicProps {
   params: ParamsRequest;
 }
 
-export const getComic = async ({
+export const getEvent = async ({
   id,
   params,
 }: getComicProps): Promise<iResponse<iComics[]>> => {

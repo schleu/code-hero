@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { SadFaceIcon } from "../../../../assets";
 import { iCharacter } from "../../../../types/character";
 import "./styles.scss";
+import { AppRoutes } from "../../../../constants/AppRoutes";
 
 interface Props {
   characters: iCharacter[];
@@ -21,7 +22,10 @@ export const Cards = ({ characters }: Props) => {
           const imgSrc =
             character.thumbnail.path + "." + character.thumbnail.extension;
           return (
-            <a href={`/${character.id}`} key={character.id}>
+            <a
+              href={AppRoutes.HERO_DETAIL.replace("id", String(character.id))}
+              key={character.id}
+            >
               <div className="card">
                 <img src={imgSrc} alt="" />
                 <div className="infos">
